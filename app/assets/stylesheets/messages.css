@@ -62,17 +62,97 @@ a{
   height: 100px;
   background-color: #ffffff;
   padding: 0px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_header_room_name{
+  margin-top: 36px;
+  color: #333;
+  font-size: 24px;
+}
+
+.main_header_btn{
+  margin-top: 40px;
+}
+
+.main_header_btn a{
+  padding: 20px;
+  color: darkred;
+  border: 1px solid darkred;
 }
 
 .main_center{
   height: calc(100vh - 190px);
   background-color: #fafafa;
   padding: 46px 40px 0px 40px;
+  overflow: auto;
+}
+
+.message{
+  padding-bottom: 40px;
+}
+
+.message_top{
+  display: flex;
+  padding: 10px 0px;
+}
+
+.message_name{
+  padding-right: 10px;
+  font-size: 16px;
+  color: #434A54;
+}
+
+.message_date{
+  font-size: 12px;
+  color: #999;
+}
+
+.message_content{
+  font-size: 14px;
+  color: #434A54;
 }
 
 .main_footer{
   height: 90px;
   background-color: #DDDDDD;
   padding: 20px 40px;
+  display: flex;
 }
 
+.form_input{
+  margin-right: 15px;
+  width: 100%;
+  display: flex;
+  background-color: white;
+}
+
+.input_message{
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+  background-color: white;
+}
+
+.form_image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.submit_btn{
+  height: 50px;
+  background-color: #38AEF0;
+  color: white;
+  padding: 0px 20px;
+}
