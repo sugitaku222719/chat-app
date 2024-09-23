@@ -9,22 +9,9 @@
     </div>
   </div>
 
-  <div class="main_center">
-    <div class="message">
-      <div class="message_top">
-        <div class="message_name">Tom</div>
-        <div class="message_date">2024/9/21 18:03</div>
-      </div>
-      <div class="message_content">おはよう</div>
-    </div>
-    <div class="message">
-      <div class="message_top">
-        <div class="message_name">Sim</div>
-        <div class="message_date">2024/9/21 18:09</div>
-      </div>
-      <div class="message_content">こんばんは</div>
-    </div>
-  </div>
+ <div class="main_center">
+  <%= render partial: 'message', collection: @messages %>
+</div>
 
   <div class="main_footer">
     <%= form_with model: [@room, @message], html: {class: "form_input"}, local: true do |f|%>
