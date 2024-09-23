@@ -2,39 +2,28 @@
 
   <div class="main_header">
     <div class="main_header_room_name">
-      hogefuga
+      <%= @room.name %>
     </div>
     <div class="main_header_btn">
-      <a href="#">チャットを終了する</a>
+       <%= link_to "チャットを終了する", room_path(@room), data: { turbo_method: :delete } %>
     </div>
   </div>
 
-  <div class="main_center">
-    <div class="message">
-      <div class="message_top">
-        <div class="message_name">Tom</div>
-        <div class="message_date">2024/9/21 18:03</div>
-      </div>
-      <div class="message_content">おはよう</div>
-    </div>
-    <div class="message">
-      <div class="message_top">
-        <div class="message_name">Sim</div>
-        <div class="message_date">2024/9/21 18:09</div>
-      </div>
-      <div class="message_content">こんばんは</div>
-    </div>
-  </div>
+ <div class="main_center">
+  <%= render partial: 'message', collection: @messages %>
+</div>
 
   <div class="main_footer">
-    <div class="form_input">
-      <input class="input_message" placeholder= "type a message">
-      <label class="form_image">
-        <span class="image-file">画像</span>
-        <input type="file" class="hidden">
-      </label>
-    </div>
-    <input class="submit_btn" type="submit" value="送信">
+    <%= form_with model: [@room, @message], html: {class: "form_input"}, local: true do |f|%>
+      <div class="form_input">
+        <%= f.text_field :content, class: 'input_message', placeholder: 'type a message' %>
+        <label class="form_image">
+          <span class="image-file">画像</span>
+          <%= f.file_field :image, class: 'hidden' %>
+        </label>
+      </div>
+      <%= f.submit '送信', class: 'submit_btn' %>
+    <% end %>
   </div>
 
 </div>
