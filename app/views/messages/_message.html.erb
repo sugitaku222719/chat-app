@@ -5,5 +5,8 @@
         <div class="message_date"><%= l message.created_at %></div>
       </div>
       <div class="message_content"><%= message.content %></div>
+      <div class="message_imag">
+        <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+      </div>
     </div>
 
